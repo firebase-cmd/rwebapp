@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: white;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.section {
+    height: 100px;
+    width: 100%;
+    border: 2px solid blue;
+    background-color: blue;
+    opacity: 0.8;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8);
+    border: 4px solid black;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    left: 0;
+}
+
+.logo img {
+    width: 60px;
+    margin-bottom: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-left: 10px;
+    border-color: 2px solid black;
+
+}
+
+.title {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    cursor: pointer;
+    text-shadow: 0 0 15px pink, 0 0 25px red;
+    animation: animate 1.5s linear infinite;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 1.2rem;
+    text-wrap: 415px;
+}
+
+.title:hover {
+    text-decoration: double underline;
+}
+
+.back-button {
+    width: 25px;
+    height: 25px;
+    background-color: green;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-right: 15px;
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: black;
+    left: 0;
+}
+
+.line-bottom {
+    bottom: 30px;
+}
+
+.container {
+    margin: 0 auto;
+    min-height: 100vh;
+    position: relative;
+    width: 95%;
+}
+
+.container h1 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+}
+
+.container .media-container {
+    grid-gap: 15px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin: 20px auto;
+}
+
+.container .media-container .media {
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .7);
+    cursor: pointer;
+    height: 500px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container .media-container .media :is(video, img) {
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s linear;
+    width: 100%;
+}
+
+.container .media-container .media:hover :is(video, img) {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.container .popup-media {
+    background: rgba(0, 0, 0, .8);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    display: none;
+}
+
+.container .popup-media :is(video, img) {
+    border: 3px solid #fff;
+    display: block;
+    left: 50%;
+    max-height: 95%;
+    max-width: 95%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.container .popup-media span {
+    color: #fff;
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: bolder;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    -webkit-user-select: none;
+    user-select: none;
+    z-index: 100;
+}
+
+
+.gallery_container {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery_box {
+    width: 200px;
+    height: 213px;
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+@keyframes animate {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    position: none;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+
+
+@media only screen and (max-width: 1328px) {
+
+    /* For mobile phones: */
+    .navbar {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    /* For tablets: */
+    .main {
+        width: 80%;
+        padding: 0;
+    }
+
+    .side_box {
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    /* For mobile phones: */
+    .menu,
+    .main,
+    .side_box {
+        width: 100%;
+    }
+
+    .navbar {
+        width: 100%;
+        padding: 0;
+    }
+}
+
